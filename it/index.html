@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Circonferenza goniometrica interattiva – angoli notevoli, seno, coseno e tangente</title>
+<meta name="description" content="Circonferenza goniometrica interattiva con la tabella completa degli angoli notevoli: inserisci un angolo in radianti o in gradi e ottieni seno, coseno e tangente esatti, come √3/2.">
+<link rel="canonical" href="https://gipivigi.github.io/it/">
+<link rel="alternate" hreflang="en" href="https://gipivigi.github.io/">
+<link rel="alternate" hreflang="it" href="https://gipivigi.github.io/it/">
+<link rel="alternate" hreflang="es" href="https://gipivigi.github.io/es/">
+<link rel="alternate" hreflang="fr" href="https://gipivigi.github.io/fr/">
+<link rel="alternate" hreflang="de" href="https://gipivigi.github.io/de/">
+<link rel="alternate" hreflang="pt" href="https://gipivigi.github.io/pt/">
+<link rel="alternate" hreflang="x-default" href="https://gipivigi.github.io/">
+<meta name="theme-color" content="#FBFCFE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131821" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Circonferenza goniometrica">
+<meta property="og:title" content="Circonferenza goniometrica interattiva – angoli notevoli, seno, coseno e tangente">
+<meta property="og:description" content="Circonferenza goniometrica interattiva con la tabella completa degli angoli notevoli: inserisci un angolo in radianti o in gradi e ottieni seno, coseno e tangente esatti, come √3/2.">
+<meta property="og:url" content="https://gipivigi.github.io/it/">
+<meta property="og:image" content="https://gipivigi.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../assets/fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Circonferenza goniometrica", "alternateName": ["Circonferenza goniometrica", "Cerchio goniometrico", "Circonferenza trigonometrica", "Tabella angoli notevoli"], "headline": "Circonferenza goniometrica interattiva – angoli notevoli, seno, coseno e tangente", "description": "Circonferenza goniometrica interattiva con la tabella completa degli angoli notevoli: inserisci un angolo in radianti o in gradi e ottieni seno, coseno e tangente esatti, come √3/2.", "url": "https://gipivigi.github.io/it/", "inLanguage": "it", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "audience": {"@type": "EducationalAudience", "educationalRole": "student"}, "educationalLevel": "Secondary school", "learningResourceType": "Interactive resource", "about": ["Unit circle", "Trigonometry", "Sine", "Cosine"]}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../it/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="var(--text)" stroke-width="2"/><line x1="16" y1="16" x2="22" y2="5.6" stroke="var(--ink)" stroke-width="2"/><line x1="22" y1="16" x2="22" y2="5.6" stroke="var(--sin)" stroke-width="2.5"/><line x1="16" y1="16" x2="22" y2="16" stroke="var(--cos)" stroke-width="2.5"/><circle cx="22" cy="5.6" r="2.8" fill="var(--ink)"/></svg>
+      <span>Circonferenza goniometrica</span>
+    </a>
+    <label class="lang"><span class="sr-only">Lingua</span>
+      <select id="langSel" aria-label="Lingua"><option value="en" lang="en">English</option><option value="it" selected lang="it">Italiano</option><option value="es" lang="es">Español</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="pt" lang="pt">Português</option></select>
+    </label>
+  </header>
+  <div class="suggest" id="suggest" hidden></div>
+
+  <main>
+    <h1>Circonferenza goniometrica</h1>
+    <p class="intro">Scrivi un angolo in radianti con π, oppure in gradi, e guarda dove cade sulla circonferenza. Per gli angoli notevoli seno, coseno e tangente sono scritti come frazioni esatte.</p>
+
+    <section class="tool" id="tool" aria-label="Circonferenza goniometrica">
+      <div class="entry">
+        <label for="ang">Angolo</label>
+        <input id="ang" type="text" value="2π/3" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-describedby="hint">
+        <button class="primary" id="show" type="button">Mostra</button>
+      </div>
+      <div class="keys" role="group" aria-label="Inserisci un simbolo">
+        <button type="button" data-ins="π" aria-label="π">π</button>
+        <button type="button" data-ins="/" aria-label="/">/</button>
+        <button type="button" data-ins="−" aria-label="−">−</button>
+        <button type="button" data-ins="°" aria-label="°">°</button>
+        <button type="button" data-ins="(" aria-label="(">(</button>
+        <button type="button" data-ins=")" aria-label=")">)</button>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+      <p class="hint" id="hint">Prova con 3π/4, −π/6, 7π/3, 2,5 oppure 135°. Puoi anche trascinare il punto lungo la circonferenza.</p>
+
+      <div class="stage">
+        <svg id="svg" viewBox="0 0 440 440" role="img" tabindex="0" aria-label="Circonferenza goniometrica con l’angolo scelto. Trascina il punto oppure usa le frecce per spostarti di π/12.">
+          <line x1="14" y1="220" x2="426" y2="220" stroke="var(--line)" stroke-width="1.5"/>
+          <line x1="220" y1="14" x2="220" y2="426" stroke="var(--line)" stroke-width="1.5"/>
+          <circle cx="220" cy="220" r="150" fill="none" stroke="var(--text)" stroke-width="1.7"/>
+          <path id="arc" fill="none" stroke="var(--arc)" stroke-width="2.5"/>
+          <line id="dash" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line id="cosL" stroke="var(--cos)" stroke-width="4.5" stroke-linecap="round"/>
+          <line id="sinL" stroke="var(--sin)" stroke-width="4.5" stroke-linecap="round"/>
+          <line id="radL" stroke="var(--ink)" stroke-width="2.4"/>
+          <g id="ticks"></g>
+          <circle id="pt" r="10" fill="var(--ink)" stroke="var(--field)" stroke-width="3"/>
+        </svg>
+        <div class="res" aria-live="polite">
+          <div class="angle" id="angOut"></div>
+          <ul class="chips" id="chips"></ul>
+          <div class="row cos"><span class="k">cos θ</span><span class="v" id="cosOut"></span></div>
+          <div class="row sin"><span class="k">sen θ</span><span class="v" id="sinOut"></span></div>
+          <div class="row"><span class="k">tan θ</span><span class="v" id="tanOut"></span></div>
+          <p class="note">Il coseno è l’ascissa del punto (rosso), il seno è l’ordinata (verde).</p>
+          <button type="button" class="copy" id="copy">Copia link</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="more">
+      <h2>Tabella degli angoli notevoli</h2>
+      <p>Tutti gli angoli notevoli da 0 a 2π, cioè da 0° a 360°, con i valori esatti di seno, coseno e tangente. Le righe evidenziate del primo quadrante sono quelle da sapere a memoria: le altre si ricavano per simmetria. Tocca un angolo per vederlo sulla circonferenza.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Gradi</th><th>Radianti</th><th class="c">cos θ</th><th class="s">sen θ</th><th>tan θ</th></tr></thead>
+          <tbody><tr class="key"><td><a href="?a=0" data-a="0">0°</a></td><td><a href="?a=0" data-a="0">0</a></td><td>1</td><td>0</td><td>0</td></tr><tr class="key"><td><a href="?a=%CF%80/6" data-a="π/6">30°</a></td><td><a href="?a=%CF%80/6" data-a="π/6"><span class="frac"><span>π</span><span>6</span></span></a></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="frac"><span>1</span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>3</span></span></td></tr><tr class="key"><td><a href="?a=%CF%80/4" data-a="π/4">45°</a></td><td><a href="?a=%CF%80/4" data-a="π/4"><span class="frac"><span>π</span><span>4</span></span></a></td><td><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td>1</td></tr><tr class="key"><td><a href="?a=%CF%80/3" data-a="π/3">60°</a></td><td><a href="?a=%CF%80/3" data-a="π/3"><span class="frac"><span>π</span><span>3</span></span></a></td><td><span class="frac"><span>1</span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td>√<span class="rad">3</span></td></tr><tr class="key"><td><a href="?a=%CF%80/2" data-a="π/2">90°</a></td><td><a href="?a=%CF%80/2" data-a="π/2"><span class="frac"><span>π</span><span>2</span></span></a></td><td>0</td><td>1</td><td><span class="u">non definita</span></td></tr><tr><td><a href="?a=2%CF%80/3" data-a="2π/3">120°</a></td><td><a href="?a=2%CF%80/3" data-a="2π/3"><span class="frac"><span>2π</span><span>3</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>1</span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="sign">−</span>√<span class="rad">3</span></td></tr><tr><td><a href="?a=3%CF%80/4" data-a="3π/4">135°</a></td><td><a href="?a=3%CF%80/4" data-a="3π/4"><span class="frac"><span>3π</span><span>4</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="sign">−</span>1</td></tr><tr><td><a href="?a=5%CF%80/6" data-a="5π/6">150°</a></td><td><a href="?a=5%CF%80/6" data-a="5π/6"><span class="frac"><span>5π</span><span>6</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="frac"><span>1</span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>3</span></span></td></tr><tr><td><a href="?a=%CF%80" data-a="π">180°</a></td><td><a href="?a=%CF%80" data-a="π">π</a></td><td><span class="sign">−</span>1</td><td>0</td><td>0</td></tr><tr><td><a href="?a=7%CF%80/6" data-a="7π/6">210°</a></td><td><a href="?a=7%CF%80/6" data-a="7π/6"><span class="frac"><span>7π</span><span>6</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>1</span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>3</span></span></td></tr><tr><td><a href="?a=5%CF%80/4" data-a="5π/4">225°</a></td><td><a href="?a=5%CF%80/4" data-a="5π/4"><span class="frac"><span>5π</span><span>4</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td>1</td></tr><tr><td><a href="?a=4%CF%80/3" data-a="4π/3">240°</a></td><td><a href="?a=4%CF%80/3" data-a="4π/3"><span class="frac"><span>4π</span><span>3</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>1</span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td>√<span class="rad">3</span></td></tr><tr><td><a href="?a=3%CF%80/2" data-a="3π/2">270°</a></td><td><a href="?a=3%CF%80/2" data-a="3π/2"><span class="frac"><span>3π</span><span>2</span></span></a></td><td>0</td><td><span class="sign">−</span>1</td><td><span class="u">non definita</span></td></tr><tr><td><a href="?a=5%CF%80/3" data-a="5π/3">300°</a></td><td><a href="?a=5%CF%80/3" data-a="5π/3"><span class="frac"><span>5π</span><span>3</span></span></a></td><td><span class="frac"><span>1</span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="sign">−</span>√<span class="rad">3</span></td></tr><tr><td><a href="?a=7%CF%80/4" data-a="7π/4">315°</a></td><td><a href="?a=7%CF%80/4" data-a="7π/4"><span class="frac"><span>7π</span><span>4</span></span></a></td><td><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="sign">−</span>1</td></tr><tr><td><a href="?a=11%CF%80/6" data-a="11π/6">330°</a></td><td><a href="?a=11%CF%80/6" data-a="11π/6"><span class="frac"><span>11π</span><span>6</span></span></a></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>1</span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>3</span></span></td></tr><tr><td><a href="?a=2%CF%80" data-a="2π">360°</a></td><td><a href="?a=2%CF%80" data-a="2π">2π</a></td><td>1</td><td>0</td><td>0</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="more">
+      <h2>Come si legge la circonferenza goniometrica</h2>
+      <p>La circonferenza goniometrica, chiamata anche cerchio goniometrico o circonferenza trigonometrica, ha raggio 1 e centro nell’origine. Ogni angolo θ, misurato in senso antiorario a partire dal semiasse positivo delle x, individua un solo punto della circonferenza.</p>
+      <p>Le coordinate di quel punto sono (cos θ, sen θ): il coseno dice quanto il punto è a destra o a sinistra, il seno quanto è in alto o in basso, e tan θ = sen θ / cos θ è la pendenza del raggio.</p>
+      <p>Angoli che differiscono di un giro completo, 2π o 360°, finiscono nello stesso punto: per questo seno e coseno sono periodici. Gli angoli negativi si misurano in senso orario.</p>
+      <p>Ogni risultato ha il suo link, così puoi mandare un angolo preciso a un compagno o salvarlo per il ripasso.</p>
+    </section>
+
+    <section class="more faq">
+      <h2>Domande frequenti</h2>
+      <h3>Quanto valgono seno e coseno di 30°, 45° e 60°?</h3>
+      <p>sen 30° = 1/2 e cos 30° = √3/2; sen 45° = cos 45° = √2/2; sen 60° = √3/2 e cos 60° = 1/2. In radianti questi angoli sono π/6, π/4 e π/3.</p>
+      <h3>Come si passa dai gradi ai radianti?</h3>
+      <p>Si moltiplica per π/180: per esempio 135° = 135 · π/180 = 3π/4. Per tornare ai gradi si moltiplica per 180/π. Questa pagina accetta entrambe le scritture: per i gradi basta aggiungere °.</p>
+      <h3>C’è un trucco per ricordare i valori degli angoli notevoli?</h3>
+      <p>Per 0°, 30°, 45°, 60° e 90° il seno vale √0/2, √1/2, √2/2, √3/2 e √4/2, cioè 0, 1/2, √2/2, √3/2 e 1. Il coseno segue la stessa sequenza al contrario.</p>
+      <h3>Perché la tangente di 90° non esiste?</h3>
+      <p>Perché tan θ = sen θ / cos θ e cos 90° = 0: si dovrebbe dividere per zero. Succede per tutti gli angoli del tipo π/2 + kπ, come 90° e 270°.</p>
+      <h3>Come si trovano seno e coseno di angoli maggiori di 90°?</h3>
+      <p>Si sfrutta la simmetria della circonferenza. Per esempio 150° è il simmetrico di 30° rispetto all’asse y, quindi sen 150° = sen 30° = 1/2 e cos 150° = −cos 30° = −√3/2. Il segno dipende dal quadrante in cui cade il punto.</p>
+    </section>
+  </main>
+
+  <footer>
+    <ul><li><a href="../" hreflang="en" lang="en">English</a></li><li><a href="../it/" hreflang="it" lang="it" aria-current="page">Italiano</a></li><li><a href="../es/" hreflang="es" lang="es">Español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="../pt/" hreflang="pt" lang="pt">Português</a></li></ul>
+    <p>Gratuito, fatto per gli studenti.</p>
+  </footer>
+</div>
+<script type="application/json" id="i18n">{"lang": "it", "locale": "it", "err": "Non riesco a leggere l’angolo. Prova con 3π/4, -pi/6 oppure 135°.", "quadrants": ["primo quadrante", "secondo quadrante", "terzo quadrante", "quarto quadrante"], "axes": "sugli assi", "equiv": "stesso punto di", "undef": "non definita", "copied": "Link copiato", "close": "Chiudi", "langs": {"en": "../", "it": "../it/", "es": "../es/", "fr": "../fr/", "de": "../de/", "pt": "../pt/"}, "suggest": {"en": {"text": "This page is also available in English.", "link": "Switch to English"}, "it": {"text": "Questa pagina è disponibile anche in italiano.", "link": "Passa all’italiano"}, "es": {"text": "Esta página también está disponible en español.", "link": "Ver en español"}, "fr": {"text": "Cette page est aussi disponible en français.", "link": "Passer au français"}, "de": {"text": "Diese Seite gibt es auch auf Deutsch.", "link": "Auf Deutsch ansehen"}, "pt": {"text": "Esta página também está disponível em português.", "link": "Ver em português"}}}</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

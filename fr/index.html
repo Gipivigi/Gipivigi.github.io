@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cercle trigonométrique interactif – valeurs remarquables de sin, cos et tan</title>
+<meta name="description" content="Cercle trigonométrique interactif avec le tableau complet des valeurs remarquables : saisis un angle en radians ou en degrés et obtiens sinus, cosinus et tangente exacts, comme √3/2.">
+<link rel="canonical" href="https://gipivigi.github.io/fr/">
+<link rel="alternate" hreflang="en" href="https://gipivigi.github.io/">
+<link rel="alternate" hreflang="it" href="https://gipivigi.github.io/it/">
+<link rel="alternate" hreflang="es" href="https://gipivigi.github.io/es/">
+<link rel="alternate" hreflang="fr" href="https://gipivigi.github.io/fr/">
+<link rel="alternate" hreflang="de" href="https://gipivigi.github.io/de/">
+<link rel="alternate" hreflang="pt" href="https://gipivigi.github.io/pt/">
+<link rel="alternate" hreflang="x-default" href="https://gipivigi.github.io/">
+<meta name="theme-color" content="#FBFCFE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131821" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cercle trigonométrique">
+<meta property="og:title" content="Cercle trigonométrique interactif – valeurs remarquables de sin, cos et tan">
+<meta property="og:description" content="Cercle trigonométrique interactif avec le tableau complet des valeurs remarquables : saisis un angle en radians ou en degrés et obtiens sinus, cosinus et tangente exacts, comme √3/2.">
+<meta property="og:url" content="https://gipivigi.github.io/fr/">
+<meta property="og:image" content="https://gipivigi.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../assets/fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Cercle trigonométrique", "alternateName": ["Cercle trigonométrique", "Cercle unité", "Tableau des valeurs remarquables"], "headline": "Cercle trigonométrique interactif – valeurs remarquables de sin, cos et tan", "description": "Cercle trigonométrique interactif avec le tableau complet des valeurs remarquables : saisis un angle en radians ou en degrés et obtiens sinus, cosinus et tangente exacts, comme √3/2.", "url": "https://gipivigi.github.io/fr/", "inLanguage": "fr", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "audience": {"@type": "EducationalAudience", "educationalRole": "student"}, "educationalLevel": "Secondary school", "learningResourceType": "Interactive resource", "about": ["Unit circle", "Trigonometry", "Sine", "Cosine"]}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../fr/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="var(--text)" stroke-width="2"/><line x1="16" y1="16" x2="22" y2="5.6" stroke="var(--ink)" stroke-width="2"/><line x1="22" y1="16" x2="22" y2="5.6" stroke="var(--sin)" stroke-width="2.5"/><line x1="16" y1="16" x2="22" y2="16" stroke="var(--cos)" stroke-width="2.5"/><circle cx="22" cy="5.6" r="2.8" fill="var(--ink)"/></svg>
+      <span>Cercle trigonométrique</span>
+    </a>
+    <label class="lang"><span class="sr-only">Langue</span>
+      <select id="langSel" aria-label="Langue"><option value="en" lang="en">English</option><option value="it" lang="it">Italiano</option><option value="es" lang="es">Español</option><option value="fr" selected lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="pt" lang="pt">Português</option></select>
+    </label>
+  </header>
+  <div class="suggest" id="suggest" hidden></div>
+
+  <main>
+    <h1>Cercle trigonométrique</h1>
+    <p class="intro">Saisis un angle en radians avec π, ou en degrés, et vois exactement où il tombe. Pour les angles remarquables, le sinus, le cosinus et la tangente s’affichent en valeurs exactes.</p>
+
+    <section class="tool" id="tool" aria-label="Cercle trigonométrique">
+      <div class="entry">
+        <label for="ang">Angle</label>
+        <input id="ang" type="text" value="2π/3" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-describedby="hint">
+        <button class="primary" id="show" type="button">Afficher</button>
+      </div>
+      <div class="keys" role="group" aria-label="Insérer un symbole">
+        <button type="button" data-ins="π" aria-label="π">π</button>
+        <button type="button" data-ins="/" aria-label="/">/</button>
+        <button type="button" data-ins="−" aria-label="−">−</button>
+        <button type="button" data-ins="°" aria-label="°">°</button>
+        <button type="button" data-ins="(" aria-label="(">(</button>
+        <button type="button" data-ins=")" aria-label=")">)</button>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+      <p class="hint" id="hint">Essaie 3π/4, −π/6, 7π/3, 2,5 ou 135°. Tu peux aussi faire glisser le point sur le cercle.</p>
+
+      <div class="stage">
+        <svg id="svg" viewBox="0 0 440 440" role="img" tabindex="0" aria-label="Cercle trigonométrique avec l’angle choisi. Fais glisser le point ou utilise les flèches pour avancer de π/12.">
+          <line x1="14" y1="220" x2="426" y2="220" stroke="var(--line)" stroke-width="1.5"/>
+          <line x1="220" y1="14" x2="220" y2="426" stroke="var(--line)" stroke-width="1.5"/>
+          <circle cx="220" cy="220" r="150" fill="none" stroke="var(--text)" stroke-width="1.7"/>
+          <path id="arc" fill="none" stroke="var(--arc)" stroke-width="2.5"/>
+          <line id="dash" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line id="cosL" stroke="var(--cos)" stroke-width="4.5" stroke-linecap="round"/>
+          <line id="sinL" stroke="var(--sin)" stroke-width="4.5" stroke-linecap="round"/>
+          <line id="radL" stroke="var(--ink)" stroke-width="2.4"/>
+          <g id="ticks"></g>
+          <circle id="pt" r="10" fill="var(--ink)" stroke="var(--field)" stroke-width="3"/>
+        </svg>
+        <div class="res" aria-live="polite">
+          <div class="angle" id="angOut"></div>
+          <ul class="chips" id="chips"></ul>
+          <div class="row cos"><span class="k">cos θ</span><span class="v" id="cosOut"></span></div>
+          <div class="row sin"><span class="k">sin θ</span><span class="v" id="sinOut"></span></div>
+          <div class="row"><span class="k">tan θ</span><span class="v" id="tanOut"></span></div>
+          <p class="note">Le cosinus est l’abscisse du point (rouge), le sinus est son ordonnée (vert).</p>
+          <button type="button" class="copy" id="copy">Copier le lien</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="more">
+      <h2>Tableau des valeurs remarquables</h2>
+      <p>Tous les angles remarquables de 0 à 2π, c’est-à-dire de 0° à 360°, avec les valeurs exactes du sinus, du cosinus et de la tangente. Les lignes surlignées du premier quadrant sont à connaître par cœur : les autres s’en déduisent par symétrie. Touche un angle pour le voir sur le cercle.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Degrés</th><th>Radians</th><th class="c">cos θ</th><th class="s">sin θ</th><th>tan θ</th></tr></thead>
+          <tbody><tr class="key"><td><a href="?a=0" data-a="0">0°</a></td><td><a href="?a=0" data-a="0">0</a></td><td>1</td><td>0</td><td>0</td></tr><tr class="key"><td><a href="?a=%CF%80/6" data-a="π/6">30°</a></td><td><a href="?a=%CF%80/6" data-a="π/6"><span class="frac"><span>π</span><span>6</span></span></a></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="frac"><span>1</span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>3</span></span></td></tr><tr class="key"><td><a href="?a=%CF%80/4" data-a="π/4">45°</a></td><td><a href="?a=%CF%80/4" data-a="π/4"><span class="frac"><span>π</span><span>4</span></span></a></td><td><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td>1</td></tr><tr class="key"><td><a href="?a=%CF%80/3" data-a="π/3">60°</a></td><td><a href="?a=%CF%80/3" data-a="π/3"><span class="frac"><span>π</span><span>3</span></span></a></td><td><span class="frac"><span>1</span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td>√<span class="rad">3</span></td></tr><tr class="key"><td><a href="?a=%CF%80/2" data-a="π/2">90°</a></td><td><a href="?a=%CF%80/2" data-a="π/2"><span class="frac"><span>π</span><span>2</span></span></a></td><td>0</td><td>1</td><td><span class="u">non définie</span></td></tr><tr><td><a href="?a=2%CF%80/3" data-a="2π/3">120°</a></td><td><a href="?a=2%CF%80/3" data-a="2π/3"><span class="frac"><span>2π</span><span>3</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>1</span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="sign">−</span>√<span class="rad">3</span></td></tr><tr><td><a href="?a=3%CF%80/4" data-a="3π/4">135°</a></td><td><a href="?a=3%CF%80/4" data-a="3π/4"><span class="frac"><span>3π</span><span>4</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="sign">−</span>1</td></tr><tr><td><a href="?a=5%CF%80/6" data-a="5π/6">150°</a></td><td><a href="?a=5%CF%80/6" data-a="5π/6"><span class="frac"><span>5π</span><span>6</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="frac"><span>1</span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>3</span></span></td></tr><tr><td><a href="?a=%CF%80" data-a="π">180°</a></td><td><a href="?a=%CF%80" data-a="π">π</a></td><td><span class="sign">−</span>1</td><td>0</td><td>0</td></tr><tr><td><a href="?a=7%CF%80/6" data-a="7π/6">210°</a></td><td><a href="?a=7%CF%80/6" data-a="7π/6"><span class="frac"><span>7π</span><span>6</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>1</span><span>2</span></span></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>3</span></span></td></tr><tr><td><a href="?a=5%CF%80/4" data-a="5π/4">225°</a></td><td><a href="?a=5%CF%80/4" data-a="5π/4"><span class="frac"><span>5π</span><span>4</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td>1</td></tr><tr><td><a href="?a=4%CF%80/3" data-a="4π/3">240°</a></td><td><a href="?a=4%CF%80/3" data-a="4π/3"><span class="frac"><span>4π</span><span>3</span></span></a></td><td><span class="sign">−</span><span class="frac"><span>1</span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td>√<span class="rad">3</span></td></tr><tr><td><a href="?a=3%CF%80/2" data-a="3π/2">270°</a></td><td><a href="?a=3%CF%80/2" data-a="3π/2"><span class="frac"><span>3π</span><span>2</span></span></a></td><td>0</td><td><span class="sign">−</span>1</td><td><span class="u">non définie</span></td></tr><tr><td><a href="?a=5%CF%80/3" data-a="5π/3">300°</a></td><td><a href="?a=5%CF%80/3" data-a="5π/3"><span class="frac"><span>5π</span><span>3</span></span></a></td><td><span class="frac"><span>1</span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="sign">−</span>√<span class="rad">3</span></td></tr><tr><td><a href="?a=7%CF%80/4" data-a="7π/4">315°</a></td><td><a href="?a=7%CF%80/4" data-a="7π/4"><span class="frac"><span>7π</span><span>4</span></span></a></td><td><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">2</span></span><span>2</span></span></td><td><span class="sign">−</span>1</td></tr><tr><td><a href="?a=11%CF%80/6" data-a="11π/6">330°</a></td><td><a href="?a=11%CF%80/6" data-a="11π/6"><span class="frac"><span>11π</span><span>6</span></span></a></td><td><span class="frac"><span>√<span class="rad">3</span></span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>1</span><span>2</span></span></td><td><span class="sign">−</span><span class="frac"><span>√<span class="rad">3</span></span><span>3</span></span></td></tr><tr><td><a href="?a=2%CF%80" data-a="2π">360°</a></td><td><a href="?a=2%CF%80" data-a="2π">2π</a></td><td>1</td><td>0</td><td>0</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="more">
+      <h2>Comment lire le cercle trigonométrique</h2>
+      <p>Le cercle trigonométrique, aussi appelé cercle unité, a pour rayon 1 et pour centre l’origine. Chaque angle θ, mesuré dans le sens inverse des aiguilles d’une montre à partir de l’axe des abscisses positif, correspond à un seul point du cercle.</p>
+      <p>Les coordonnées de ce point sont (cos θ, sin θ) : le cosinus indique de combien le point est à droite ou à gauche, le sinus de combien il est en haut ou en bas, et tan θ = sin θ / cos θ est la pente du rayon.</p>
+      <p>Deux angles qui diffèrent d’un tour complet, 2π ou 360°, tombent sur le même point : c’est pour cela que le sinus et le cosinus sont périodiques. Les angles négatifs se mesurent dans le sens des aiguilles d’une montre.</p>
+      <p>Chaque résultat a son propre lien : tu peux envoyer un angle précis à un camarade ou le garder pour réviser.</p>
+    </section>
+
+    <section class="more faq">
+      <h2>Questions fréquentes</h2>
+      <h3>Que valent le sinus et le cosinus de 30°, 45° et 60° ?</h3>
+      <p>sin 30° = 1/2 et cos 30° = √3/2 ; sin 45° = cos 45° = √2/2 ; sin 60° = √3/2 et cos 60° = 1/2. En radians, ces angles valent π/6, π/4 et π/3.</p>
+      <h3>Comment convertir des degrés en radians ?</h3>
+      <p>On multiplie par π/180 : par exemple 135° = 135 × π/180 = 3π/4. Pour revenir aux degrés, on multiplie par 180/π. Cette page accepte les deux écritures : pour les degrés, il suffit d’ajouter °.</p>
+      <h3>Existe-t-il une astuce pour retenir les valeurs remarquables ?</h3>
+      <p>Pour 0°, 30°, 45°, 60° et 90°, le sinus vaut √0/2, √1/2, √2/2, √3/2 et √4/2, soit 0, 1/2, √2/2, √3/2 et 1. Le cosinus suit la même suite à l’envers.</p>
+      <h3>Pourquoi la tangente de 90° n’existe-t-elle pas ?</h3>
+      <p>Parce que tan θ = sin θ / cos θ et cos 90° = 0 : il faudrait diviser par zéro. C’est le cas pour tous les angles de la forme π/2 + kπ, comme 90° et 270°.</p>
+      <h3>Comment trouver le sinus et le cosinus d’un angle supérieur à 90° ?</h3>
+      <p>On utilise la symétrie du cercle. Par exemple, 150° est le symétrique de 30° par rapport à l’axe des ordonnées, donc sin 150° = sin 30° = 1/2 et cos 150° = −cos 30° = −√3/2. Le signe dépend du quadrant où tombe le point.</p>
+    </section>
+  </main>
+
+  <footer>
+    <ul><li><a href="../" hreflang="en" lang="en">English</a></li><li><a href="../it/" hreflang="it" lang="it">Italiano</a></li><li><a href="../es/" hreflang="es" lang="es">Español</a></li><li><a href="../fr/" hreflang="fr" lang="fr" aria-current="page">Français</a></li><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="../pt/" hreflang="pt" lang="pt">Português</a></li></ul>
+    <p>Gratuit, fait pour les élèves.</p>
+  </footer>
+</div>
+<script type="application/json" id="i18n">{"lang": "fr", "locale": "fr", "err": "Impossible de lire cet angle. Essaie 3π/4, -pi/6 ou 135°.", "quadrants": ["premier quadrant", "deuxième quadrant", "troisième quadrant", "quatrième quadrant"], "axes": "sur un axe", "equiv": "même point que", "undef": "non définie", "copied": "Lien copié", "close": "Fermer", "langs": {"en": "../", "it": "../it/", "es": "../es/", "fr": "../fr/", "de": "../de/", "pt": "../pt/"}, "suggest": {"en": {"text": "This page is also available in English.", "link": "Switch to English"}, "it": {"text": "Questa pagina è disponibile anche in italiano.", "link": "Passa all’italiano"}, "es": {"text": "Esta página también está disponible en español.", "link": "Ver en español"}, "fr": {"text": "Cette page est aussi disponible en français.", "link": "Passer au français"}, "de": {"text": "Diese Seite gibt es auch auf Deutsch.", "link": "Auf Deutsch ansehen"}, "pt": {"text": "Esta página também está disponível em português.", "link": "Ver em português"}}}</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
